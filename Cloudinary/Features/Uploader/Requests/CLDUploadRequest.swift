@@ -33,9 +33,9 @@ import Foundation
 @objc open class CLDUploadRequest: NSObject {
     
     
-    internal var networkRequest: CLDNetworkDataRequest
+    @objc internal var networkRequest: CLDNetworkDataRequest
     
-    internal init(networkDataRequest: CLDNetworkDataRequest) {
+    @objc internal init(networkDataRequest: CLDNetworkDataRequest) {
         networkRequest = networkDataRequest
     }
     
@@ -45,21 +45,21 @@ import Foundation
     /**
      Resume the request.
      */
-    open func resume() {
+    @objc open func resume() {
         networkRequest.resume()
     }
     
     /**
      Suspend the request.
      */
-    open func suspend() {
+    @objc open func suspend() {
         networkRequest.suspend()
     }
     
     /**
      Cancel the request.
      */
-    open func cancel() {
+    @objc open func cancel() {
         networkRequest.cancel()
     }
     
@@ -73,7 +73,7 @@ import Foundation
      - returns:                          The same instance of CLDUploadRequest.
      */
     
-    @discardableResult
+    @objc @discardableResult
     open func responseRaw(_ completionHandler: @escaping (_ response: Any?, _ error: NSError?) -> ()) -> CLDUploadRequest {
         networkRequest.response(completionHandler)
         return self
@@ -86,7 +86,7 @@ import Foundation
      
      - returns:                          The same instance of CLDUploadRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func response(_ completionHandler: @escaping (_ result: CLDUploadResult?, _ error: NSError?) -> ()) -> CLDUploadRequest {
         responseRaw { (response, error) in
             if let res = response as? [String : AnyObject] {
@@ -109,7 +109,7 @@ import Foundation
      
      - returns:                          The same instance of CLDUploadRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     func progress(_ progress: @escaping ((Progress) -> Void)) -> CLDUploadRequest {
         networkRequest.progress(progress)
         return self

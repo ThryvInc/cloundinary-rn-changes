@@ -38,7 +38,7 @@ import Foundation
      
      - returns:                          The same instance of CLDMultiRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func response(_ completionHandler: ((_ result: CLDMultiResult?, _ error: NSError?) -> ())?) -> CLDMultiRequest {
         responseRaw { (response, error) in
             if let res = response as? [String : AnyObject] {

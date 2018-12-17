@@ -77,7 +77,7 @@ import Foundation
                             allowing the options to add response closure to be called once the request has finished,
                             as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func destroy(_ publicId: String, params: CLDDestroyRequestParams? = nil, completionHandler: ((_ result: CLDDeleteResult?, _ error: Error?) -> ())? = nil) -> CLDDeleteRequest {
         let destroyParams = CLDDestroyRequestParams(publicId: publicId)
         destroyParams.params.cldMerge(params?.params)
@@ -102,7 +102,7 @@ import Foundation
                             allowing the options to add response closure to be called once the request has finished,
                             as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func addTag(_ tag: String, publicIds: [String], params: CLDTagsRequestParams? = nil, completionHandler: ((_ result: CLDTagResult?, _ error: Error?) -> ())? = nil) -> CLDTagRequest {
         let addTagParams = CLDTagsRequestParams(tag: tag, publicIds: publicIds)
         addTagParams.params.cldMerge(params?.params)
@@ -127,7 +127,7 @@ import Foundation
      allowing the options to add response closure to be called once the request has finished,
      as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func removeTag(_ tag: String, publicIds: [String], params: CLDTagsRequestParams? = nil, completionHandler: ((_ result: CLDTagResult?, _ error: Error?) -> ())? = nil) -> CLDTagRequest {
         let removeTagParams = CLDTagsRequestParams(tag: tag, publicIds: publicIds)
         removeTagParams.params.cldMerge(params?.params)
@@ -152,7 +152,7 @@ import Foundation
      allowing the options to add response closure to be called once the request has finished,
      as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func replaceTag(_ tag: String, publicIds: [String], params: CLDTagsRequestParams? = nil, completionHandler: ((_ result: CLDTagResult?, _ error: Error?) -> ())? = nil) -> CLDTagRequest {
         let replaceTagParams = CLDTagsRequestParams(tag: tag, publicIds: publicIds)
         replaceTagParams.params.cldMerge(params?.params)
@@ -203,7 +203,7 @@ import Foundation
      allowing the options to add response closure to be called once the request has finished,
      as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func explicit(_ publicId: String, type: CLDType, params: CLDExplicitRequestParams? = nil, completionHandler: ((_ result: CLDExplicitResult?, _ error: Error?) -> ())? = nil) -> CLDExplicitRequest {
         return explicit(publicId, type: String(describing: type), params: params, completionHandler: completionHandler)
     }
@@ -224,7 +224,7 @@ import Foundation
                             allowing the options to add response closure to be called once the request has finished,
                             as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func explode(_ publicId: String, transformation: CLDTransformation, params: CLDExplodeRequestParams? = nil, completionHandler: ((_ result: CLDExplodeResult?, _ error: Error?) -> ())? = nil) -> CLDExplodeRequest {
         let explodeParams = CLDExplodeRequestParams(publicId: publicId, transformation: transformation)
         explodeParams.params.cldMerge(params?.params)
@@ -246,7 +246,7 @@ import Foundation
                             allowing the options to add response closure to be called once the request has finished,
                             as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func generateSprite(_ tag: String, params: CLDSpriteRequestParams? = nil, completionHandler: ((_ result: CLDSpriteResult?, _ error: Error?) -> ())? = nil) -> CLDSpriteRequest {
         let generateSpriteParams = CLDSpriteRequestParams(tag: tag)
         generateSpriteParams.params.cldMerge(params?.params)
@@ -269,7 +269,7 @@ import Foundation
                             allowing the options to add response closure to be called once the request has finished,
                             as well as performing actions on the request, such as cancelling, suspending or resuming it.
     */
-    @discardableResult
+    @objc @discardableResult
     open func multi(_ tag: String, params: CLDMultiRequestParams? = nil, completionHandler: ((_ result: CLDMultiResult?, _ error: Error?) -> ())? = nil) -> CLDMultiRequest {
         let multiParams = CLDMultiRequestParams(tag: tag)
         multiParams.params.cldMerge(params?.params)
@@ -293,7 +293,7 @@ import Foundation
                             allowing the options to add response closure to be called once the request has finished,
                             as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func text(_ text: String, params: CLDTextRequestParams? = nil, completionHandler: ((_ result: CLDTextResult?, _ error: Error?) -> ())? = nil) -> CLDTextRequest {
         let textParams = CLDTextRequestParams(text: text)
         textParams.params.cldMerge(params?.params)
@@ -316,7 +316,7 @@ import Foundation
                             allowing the options to add response closure to be called once the request has finished,
                             as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func deleteByToken(_ token: String, params: CLDDeleteByTokenRequestParams? = nil, completionHandler: ((_ result: CLDDeleteResult?, _ error: Error?) -> ())? = nil) -> CLDDeleteRequest {
         let deleteByTokenParams = CLDDeleteByTokenRequestParams(token: token)
         deleteByTokenParams.params.cldMerge(params?.params)

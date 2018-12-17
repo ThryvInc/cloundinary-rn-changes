@@ -55,7 +55,7 @@ import Foundation
                                     and a response closure to be called once the upload is finished,
                                     as well as performing actions on the request, such as cancelling, suspending or resuming it.
     */
-    @discardableResult
+    @objc @discardableResult
     open func signedUpload(data: Data, params: CLDUploadRequestParams? = nil, progress: ((Progress) -> Void)? = nil, completionHandler:((_ response: CLDUploadResult?, _ error: NSError?) -> ())? = nil) -> CLDUploadRequest {
         let params = params ?? CLDUploadRequestParams()
         params.setSigned(true)
@@ -87,7 +87,7 @@ import Foundation
                                     and a response closure to be called once the upload is finished,
                                     as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func upload(data: Data, uploadPreset: String, params: CLDUploadRequestParams? = nil, progress: ((Progress) -> Void)? = nil, completionHandler:((_ response: CLDUploadResult?, _ error: NSError?) -> ())? = nil) -> CLDUploadRequest {
         let params = params ?? CLDUploadRequestParams()
         params.setSigned(false)
@@ -109,7 +109,7 @@ import Foundation
                                     and a response closure to be called once the upload is finished,
                                     as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func signedUpload(url: URL, params: CLDUploadRequestParams? = nil, progress: ((Progress) -> Void)? = nil, completionHandler:((_ response: CLDUploadResult?, _ error: NSError?) -> ())? = nil) -> CLDUploadRequest {
         let params = params ?? CLDUploadRequestParams()
         params.setSigned(true)
@@ -142,7 +142,7 @@ import Foundation
                                     and a response closure to be called once the upload is finished,
                                     as well as performing actions on the request, such as cancelling, suspending or resuming it.
      */
-    @discardableResult
+    @objc @discardableResult
     open func upload(url: URL, uploadPreset: String, params: CLDUploadRequestParams? = nil, progress: ((Progress) -> Void)? = nil, completionHandler:((_ response: CLDUploadResult?, _ error: NSError?) -> ())? = nil) -> CLDUploadRequest {
         let params = params ?? CLDUploadRequestParams()
         params.setSigned(false)

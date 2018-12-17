@@ -32,9 +32,9 @@ import Foundation
 @objc open class CLDRequest: NSObject {
     
     
-    internal var networkRequest: CLDNetworkDataRequest
+    @objc internal var networkRequest: CLDNetworkDataRequest
     
-    internal init(networkRequest: CLDNetworkDataRequest) {
+    @objc internal init(networkRequest: CLDNetworkDataRequest) {
         self.networkRequest = networkRequest
     }
     
@@ -44,21 +44,21 @@ import Foundation
     /**
      Resume the request.
      */
-    open func resume() {
+    @objc open func resume() {
        networkRequest.resume()
     }
     
     /**
      Suspend the request.
      */
-    open func suspend() {
+    @objc open func suspend() {
         networkRequest.suspend()
     }
     
     /**
      Cancel the request.
      */
-    open func cancel() {
+    @objc open func cancel() {
         networkRequest.cancel()
     }
     
@@ -71,7 +71,7 @@ import Foundation
      
      - returns:                          The same instance of CLDRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func responseRaw(_ completionHandler: @escaping (_ response: Any?, _ error: NSError?) -> ()) -> CLDRequest {
         networkRequest.response(completionHandler)
         return self

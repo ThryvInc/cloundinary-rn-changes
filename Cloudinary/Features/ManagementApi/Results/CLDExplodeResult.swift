@@ -28,11 +28,11 @@ import Foundation
     
     // MARK: - Getters
     
-    open var status: String? {
+    @objc open var status: String? {
         return getParam(.status) as? String
     }
     
-    open var batchId: String? {
+    @objc open var batchId: String? {
         return getParam(.batchId) as? String
     }
     

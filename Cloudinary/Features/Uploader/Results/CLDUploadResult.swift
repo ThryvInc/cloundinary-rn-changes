@@ -29,34 +29,34 @@ import Foundation
     
     // MARK: - Getters
     
-    open var publicId: String? {
+    @objc open var publicId: String? {
         return getParam(.publicId) as? String
     }
     
-    open var version: String? {
+    @objc open var version: String? {
         guard let version = getParam(.version) else {
             return nil
         }
         return String(describing: version)
     }
     
-    open var url: String? {
+    @objc open var url: String? {
         return getParam(.url) as? String
     }
     
-    open var secureUrl: String? {
+    @objc open var secureUrl: String? {
         return getParam(.secureUrl) as? String
     }
     
-    open var resourceType: String? {
+    @objc open var resourceType: String? {
         return getParam(.resourceType) as? String
     }
     
-    open var signature: String? {
+    @objc open var signature: String? {
         return getParam(.signature) as? String
     }
     
-    open var createdAt: String? {
+    @objc open var createdAt: String? {
         return getParam(.createdAt) as? String
     }
     
@@ -64,15 +64,15 @@ import Foundation
         return getParam(.length) as? Double
     }
     
-    open var tags: [String]? {
+    @objc open var tags: [String]? {
         return getParam(.tags) as? [String]
     }
     
-    open var moderation: AnyObject? {
+    @objc open var moderation: AnyObject? {
         return getParam(.moderation)
     }
 
-    open var context: [String:[String:String]]? {
+    @objc open var context: [String:[String:String]]? {
         var result: [String:[String:String]]? = nil
         if let c = getParam(.context) as? [String:AnyObject] {
             result = [:]
@@ -93,35 +93,35 @@ import Foundation
         return getParam(.height) as? Int
     }
     
-    open var format: String? {
+    @objc open var format: String? {
         return getParam(.format) as? String
     }
     
-    open var exif: [String : String]? {
+    @objc open var exif: [String : String]? {
         return getParam(.exif) as? [String : String]
     }
     
-    open var metadata: [String : String]? {
+    @objc open var metadata: [String : String]? {
         return getParam(.metadata) as? [String : String]
     }
     
-    open var faces: AnyObject? {
+    @objc open var faces: AnyObject? {
         return getParam(.faces)
     }
     
-    open var colors: AnyObject? {
+    @objc open var colors: AnyObject? {
         return getParam(.colors)
     }
     
-    open var phash: String? {
+    @objc open var phash: String? {
         return getParam(.phash) as? String
     }
     
-    open var deleteToken: String? {
+    @objc open var deleteToken: String? {
         return getParam(.deleteToken) as? String
     }
     
-    open var info: CLDInfo? {
+    @objc open var info: CLDInfo? {
         guard let info = getParam(.info) as? [String : AnyObject] else {
             return nil
         }
@@ -130,14 +130,14 @@ import Foundation
     
     // MARK: Video Params
     
-    open var video: CLDVideo? {
+    @objc open var video: CLDVideo? {
         guard let video = getParam(.video) as? [String : AnyObject] else {
             return nil
         }
         return CLDVideo(json: video)
     }
     
-    open var audio: CLDAudio? {
+    @objc open var audio: CLDAudio? {
         guard let audio = getParam(.audio) as? [String : AnyObject] else {
             return nil
         }
@@ -188,11 +188,11 @@ import Foundation
 
 @objc open class CLDVideo: CLDBaseResult {
     
-    open var format: String? {
+    @objc open var format: String? {
         return getParam(.pixFormat) as? String
     }
     
-    open var codec: String? {
+    @objc open var codec: String? {
         return getParam(.codec) as? String
     }
     
@@ -226,7 +226,7 @@ import Foundation
 
 @objc open class CLDAudio: CLDBaseResult {
     
-    open var codec: String? {
+    @objc open var codec: String? {
         return getParam(.codec) as? String
     }
     
@@ -242,7 +242,7 @@ import Foundation
         return getParam(.channels) as? Int
     }
     
-    open var channelLayout: String? {
+    @objc open var channelLayout: String? {
         return getParam(.channelLayout) as? String
     }
     

@@ -42,7 +42,7 @@ import Foundation
     
     - returns:                       A new instance of CLDTagsRequestParams.
     */
-    internal init(tag: String, publicIds: [String]) {
+    @objc internal init(tag: String, publicIds: [String]) {
         super.init()
         setParam(TagsParams.Tag.rawValue, value: tag)
         setParam(TagsParams.PublicIds.rawValue, value: publicIds)
@@ -55,7 +55,7 @@ import Foundation
      
      - returns:             A new instance of CLDTagsRequestParams.
      */
-    public init(params: [String : AnyObject]) {
+    @objc public init(params: [String : AnyObject]) {
         super.init()
         self.params = params
     }

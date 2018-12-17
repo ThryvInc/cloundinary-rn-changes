@@ -38,7 +38,7 @@ import Foundation
      
      - returns:                          The same instance of CLDDeleteRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func response(_ completionHandler: ((_ result: CLDDeleteResult?, _ error: NSError?) -> ())?) -> CLDDeleteRequest {
         responseRaw { (response, error) in
             if let res = response as? [String : AnyObject] {

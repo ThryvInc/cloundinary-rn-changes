@@ -26,11 +26,11 @@ import Foundation
 
 @objc open class CLDRekognitionFace: CLDBaseResult {
     
-    open var status: String? {
+    @objc open var status: String? {
         return getParam(.status) as? String
     }
     
-    open var faces: [CLDFace]? {
+    @objc open var faces: [CLDFace]? {
         guard let facesArr = getParam(.faces) as? [[String : AnyObject]] else {
             return nil
         }

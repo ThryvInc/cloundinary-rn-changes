@@ -29,19 +29,19 @@ import Foundation
     
     // MARK: - Getters
     
-    open var url: String? {
+    @objc open var url: String? {
         return getParam(.url) as? String
     }
     
-    open var secureUrl: String? {
+    @objc open var secureUrl: String? {
         return getParam(.secureUrl) as? String
     }
     
-    open var publicId: String? {
+    @objc open var publicId: String? {
         return getParam(.publicId) as? String
     }
     
-    open var version: String? {
+    @objc open var version: String? {
         guard let version = getParam(.version) else {
             return nil
         }

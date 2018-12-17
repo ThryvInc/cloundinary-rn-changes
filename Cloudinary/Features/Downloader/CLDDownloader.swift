@@ -50,7 +50,7 @@ import Foundation
     
     - returns:              A `CLDFetchImageRequest` instance to be used to get the fetched image from, or to get the download progress or cancel the task.
     */
-    @discardableResult
+    @objc @discardableResult
     open func fetchImage(_ url: String, _ progress: ((Progress) -> Void)? = nil, completionHandler: CLDCompletionHandler? = nil) -> CLDFetchImageRequest {
         let request = CLDFetchImageRequestImpl(url: url, networkCoordinator: networkCoordinator)
         request.fetchImage()

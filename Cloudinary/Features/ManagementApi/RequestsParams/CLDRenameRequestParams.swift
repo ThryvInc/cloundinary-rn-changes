@@ -61,7 +61,7 @@ import Foundation
      
      - returns:             A new instance of CLDRenameRequestParams.
      */
-    public init(params: [String : AnyObject]) {
+    @objc public init(params: [String : AnyObject]) {
         super.init()
         self.params = params
     }

@@ -28,30 +28,30 @@ import Foundation
     
     // MARK: - Getters
     
-    open var publicId: String? {
+    @objc open var publicId: String? {
         return getParam(.publicId) as? String
     }
     
-    open var format: String? {
+    @objc open var format: String? {
         return getParam(.format) as? String
     }
     
-    open var version: String? {
+    @objc open var version: String? {
         guard let version = getParam(.version) else {
             return nil
         }
         return String(describing: version)
     }
     
-    open var resourceType: String? {
+    @objc open var resourceType: String? {
         return getParam(.resourceType) as? String
     }
     
-    open var type: String? {
+    @objc open var type: String? {
         return getParam(.urlType) as? String
     }
     
-    open var createdAt: String? {
+    @objc open var createdAt: String? {
         return getParam(.createdAt) as? String
     }
     
@@ -67,72 +67,72 @@ import Foundation
         return getParam(.height) as? Int
     }
     
-    open var url: String? {
+    @objc open var url: String? {
         return getParam(.url) as? String
     }
     
-    open var secureUrl: String? {
+    @objc open var secureUrl: String? {
         return getParam(.secureUrl) as? String
     }
     
-    open var nextCursor: String? {
+    @objc open var nextCursor: String? {
         return getParam(.nextCursor) as? String
     }
     
-    open var exif: [String : String]? {
+    @objc open var exif: [String : String]? {
         return getParam(.exif) as? [String : String]
     }
     
-    open var metadata: [String : String]? {
+    @objc open var metadata: [String : String]? {
         return getParam(.metadata) as? [String : String]
     }
     
-    open var faces: AnyObject? {
+    @objc open var faces: AnyObject? {
         return getParam(.faces)
     }
     
-    open var colors: AnyObject? {
+    @objc open var colors: AnyObject? {
         return getParam(.colors)
     }
     
-    open var derived: CLDDerived? {
+    @objc open var derived: CLDDerived? {
         guard let derived = getParam(.derived) as? [String : AnyObject] else {
             return nil
         }
         return CLDDerived(json: derived)
     }
     
-    open var tags: [String]? {
+    @objc open var tags: [String]? {
         return getParam(.tags) as? [String]
     }
     
-    open var moderation: AnyObject? {
+    @objc open var moderation: AnyObject? {
         return getParam(.moderation)
     }
     
-    open var context: AnyObject? {
+    @objc open var context: AnyObject? {
         return getParam(.context)
     }
     
-    open var phash: String? {
+    @objc open var phash: String? {
         return getParam(.phash) as? String
     }
     
-    open var predominant: CLDPredominant? {
+    @objc open var predominant: CLDPredominant? {
         guard let predominant = getParam(.predominant) as? [String : AnyObject] else {
             return nil
         }
         return CLDPredominant(json: predominant)
     }
     
-    open var coordinates: CLDCoordinates? {
+    @objc open var coordinates: CLDCoordinates? {
         guard let coordinates = getParam(.coordinates) as? [String : AnyObject] else {
             return nil
         }
         return CLDCoordinates(json: coordinates)
     }
     
-    open var info: CLDInfo? {
+    @objc open var info: CLDInfo? {
         guard let info = getParam(.info) as? [String : AnyObject] else {
             return nil
         }
@@ -164,11 +164,11 @@ import Foundation
 
 @objc open class CLDCoordinates: CLDBaseResult {
     
-    open var custom: AnyObject? {
+    @objc open var custom: AnyObject? {
         return getParam(.custom)
     }
     
-    open var faces: AnyObject? {
+    @objc open var faces: AnyObject? {
         return getParam(.faces)
     }
     
@@ -194,7 +194,7 @@ import Foundation
 
 @objc open class CLDPredominant: CLDBaseResult {
     
-    open var google: AnyObject? {
+    @objc open var google: AnyObject? {
         return getParam(.google)
     }
     
@@ -220,11 +220,11 @@ import Foundation
 
 @objc open class CLDDerived: CLDBaseResult {
     
-    open var transformation: String? {
+    @objc open var transformation: String? {
         return getParam(.transformation) as? String
     }
     
-    open var format: String? {
+    @objc open var format: String? {
         return getParam(.format) as? String
     }
     
@@ -232,15 +232,15 @@ import Foundation
         return getParam(.length) as? Double
     }
     
-    open var identifier: String? {
+    @objc open var identifier: String? {
         return getParam(.id) as? String
     }
     
-    open var url: String? {
+    @objc open var url: String? {
         return getParam(.url) as? String
     }
     
-    open var secureUrl: String? {
+    @objc open var secureUrl: String? {
         return getParam(.secureUrl) as? String
     }
     

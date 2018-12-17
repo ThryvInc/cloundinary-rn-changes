@@ -42,7 +42,7 @@ import Foundation
     
     - returns:                       A new instance of CLDDestroyRequestParams.
     */
-    internal init(publicId: String) {
+    @objc internal init(publicId: String) {
         super.init()
         setParam(DestroyParams.PublicId.rawValue, value: publicId)
     }
@@ -54,7 +54,7 @@ import Foundation
      
      - returns:             A new instance of CLDDestroyRequestParams.
      */
-    public init(params: [String : AnyObject]) {
+    @objc public init(params: [String : AnyObject]) {
         super.init()
         self.params = params
     }
@@ -81,7 +81,7 @@ import Foundation
      
      - returns:              The same instance of CLDExplodeRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setType(_ type: String) -> Self {
         super.setParam(DestroyParams.CloudType.rawValue, value: type)
         return self
@@ -94,7 +94,7 @@ import Foundation
      
     - returns:              The same instance of CLDDestroyRequestParams.
     */
-    @discardableResult
+    @objc @discardableResult
     open func setInvalidate(_ invalidate: Bool) -> Self {
         super.setParam(DestroyParams.Invalidate.rawValue, value: invalidate)
         return self

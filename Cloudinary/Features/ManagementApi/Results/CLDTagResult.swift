@@ -29,7 +29,7 @@ import Foundation
     
     // MARK: - Getters
     
-    open var publicIds: [String]? {
+    @objc open var publicIds: [String]? {
         return getParam(.publicIds) as? [String]
     }
     

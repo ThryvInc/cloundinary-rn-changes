@@ -26,7 +26,7 @@ import Foundation
 
 @objc open class CLDDetection: CLDBaseResult {
     
-    open var rekognitionFace: CLDRekognitionFace? {
+    @objc open var rekognitionFace: CLDRekognitionFace? {
         guard let rekognitionFace = getParam(.rekognitionFace) as? [String : AnyObject] else {
             return nil
         }

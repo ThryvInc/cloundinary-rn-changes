@@ -90,7 +90,7 @@ import Foundation
         super.init()
     }
     
-    internal init(configuration: CLDConfiguration) {
+    @objc internal init(configuration: CLDConfiguration) {
         config = configuration
         super.init()
     }
@@ -104,7 +104,7 @@ import Foundation
     
     - returns:               the same instance of CLDUrl.
     */
-    open func setPublicId(_ publicId: String) -> CLDUrl {
+    @objc open func setPublicId(_ publicId: String) -> CLDUrl {
         self.publicId = publicId
         return self
     }
@@ -128,7 +128,7 @@ import Foundation
      
      - returns:               the same instance of CLDUrl.
      */
-    open func setType(_ type: String) -> CLDUrl {
+    @objc open func setType(_ type: String) -> CLDUrl {
         self.type = type
         return self
     }
@@ -152,7 +152,7 @@ import Foundation
      
      - returns:                      the same instance of CLDUrl.
      */
-    open func setResourceType(_ resourceType: String) -> CLDUrl {
+    @objc open func setResourceType(_ resourceType: String) -> CLDUrl {
         self.resourceType = resourceType
         return self
     }
@@ -164,7 +164,7 @@ import Foundation
      
      - returns:                      the same instance of CLDUrl.
      */
-    open func setFormat(_ format: String) -> CLDUrl {
+    @objc open func setFormat(_ format: String) -> CLDUrl {
         self.format = format
         return self
     }
@@ -177,7 +177,7 @@ import Foundation
      
      - returns:                      the same instance of CLDUrl.
      */
-    open func setVersion(_ version: String) -> CLDUrl {
+    @objc open func setVersion(_ version: String) -> CLDUrl {
         self.version = version
         return self
     }
@@ -189,7 +189,7 @@ import Foundation
      
      - returns:                      the same instance of CLDUrl.
      */
-    open func setSuffix(_ suffix: String) -> CLDUrl {
+    @objc open func setSuffix(_ suffix: String) -> CLDUrl {
         self.suffix = suffix
         return self
     }
@@ -201,7 +201,7 @@ import Foundation
      
      - returns:                      the same instance of CLDUrl.
      */
-    open func setUseRootPath(_ useRootPath: Bool) -> CLDUrl {
+    @objc open func setUseRootPath(_ useRootPath: Bool) -> CLDUrl {
         self.useRootPath = useRootPath
         return self
     }
@@ -213,7 +213,7 @@ import Foundation
      
      - returns:                      the same instance of CLDUrl.
      */
-    open func setShortenUrl(_ shortenUrl: Bool) -> CLDUrl {
+    @objc open func setShortenUrl(_ shortenUrl: Bool) -> CLDUrl {
         self.shortenUrl = shortenUrl
         return self
     }
@@ -225,7 +225,7 @@ import Foundation
      
      - returns:                      the same instance of CLDUrl.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setTransformation(_ transformation: CLDTransformation) -> CLDUrl {
         self.transformation = transformation
         return self
@@ -240,7 +240,7 @@ import Foundation
 
      - returns:                  The generated string URL representation.
      */
-    open func generate(signUrl: Bool = false) -> String? {
+    @objc open func generate(signUrl: Bool = false) -> String? {
         if let publicId = self.publicId {
             return generate(publicId, signUrl: signUrl)
         } else {
@@ -256,7 +256,7 @@ import Foundation
      
      - returns:                  The generated string URL representation.
      */
-    open func generate(_ publicId: String, signUrl: Bool = false) -> String? {
+    @objc open func generate(_ publicId: String, signUrl: Bool = false) -> String? {
         
         if signUrl && config.apiSecret == nil {
             printLog(.error, text: "Must supply api_secret for signing urls")
@@ -273,10 +273,10 @@ import Foundation
         let preloadedComponentsMatch = GenerateUrlRegex.preloadedRegex.matches(in: sourceName, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, sourceName.characters.count))
         if preloadedComponentsMatch.count > 0 {
             if let preloadedComponents = preloadedComponentsMatch.first {
-                resourceType = (sourceName as NSString).substring(with: preloadedComponents.rangeAt(1))
-                type = (sourceName as NSString).substring(with: preloadedComponents.rangeAt(2))
-                version = (sourceName as NSString).substring(with: preloadedComponents.rangeAt(3))
-                sourceName = (sourceName as NSString).substring(with: preloadedComponents.rangeAt(4))
+                resourceType = (sourceName as NSString).substring(with: preloadedComponents.range(at: 1))
+                type = (sourceName as NSString).substring(with: preloadedComponents.range(at: 2))
+                version = (sourceName as NSString).substring(with: preloadedComponents.range(at: 3))
+                sourceName = (sourceName as NSString).substring(with: preloadedComponents.range(at: 4))
             }
         }
         

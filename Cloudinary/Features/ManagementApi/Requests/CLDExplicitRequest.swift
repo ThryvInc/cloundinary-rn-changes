@@ -38,7 +38,7 @@ import Foundation
      
      - returns:                          The same instance of CLDExplicitRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func response(_ completionHandler: ((_ result: CLDExplicitResult?, _ error: NSError?) -> ())?) -> CLDExplicitRequest {
         responseRaw { (response, error) in
             if let res = response as? [String : AnyObject] {

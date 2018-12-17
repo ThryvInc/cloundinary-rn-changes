@@ -42,7 +42,7 @@ open class CLDMultiRequestParams: CLDRequestParams {
     
     - returns:              A new instance of CLDMultiRequestParams.
     */
-    internal init(tag: String) {
+    @objc internal init(tag: String) {
         super.init()
         setParam(MultiParams.Tag.rawValue, value: tag)
     }
@@ -54,7 +54,7 @@ open class CLDMultiRequestParams: CLDRequestParams {
      
      - returns:             A new instance of CLDMultiRequestParams.
      */
-    public init(params: [String : AnyObject]) {
+    @objc public init(params: [String : AnyObject]) {
         super.init()
         self.params = params
     }
@@ -68,7 +68,7 @@ open class CLDMultiRequestParams: CLDRequestParams {
     
     - returns:                      A new instance of CLDMultiRequestParams.
     */
-    @discardableResult
+    @objc @discardableResult
     open func setTransformation(_ transformation: CLDTransformation) -> Self {
         if let trans = transformation.asString() {        
             super.setParam(MultiParams.Transformation.rawValue, value: trans)
@@ -83,7 +83,7 @@ open class CLDMultiRequestParams: CLDRequestParams {
      
      - returns:                      A new instance of CLDMultiRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setFormat(_ format: String) -> Self {
         super.setParam(MultiParams.Format.rawValue, value: format)
         return self
@@ -96,7 +96,7 @@ open class CLDMultiRequestParams: CLDRequestParams {
      
      - returns:                      A new instance of CLDMultiRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setAsync(_ async: Bool) -> Self {
         super.setParam(MultiParams.Async.rawValue, value: async)
         return self
@@ -109,7 +109,7 @@ open class CLDMultiRequestParams: CLDRequestParams {
      
      - returns:                      A new instance of CLDMultiRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setNotificationUrl(_ notificationUrl: String) -> Self {
         super.setParam(MultiParams.NotificationUrl.rawValue, value: notificationUrl)
         return self

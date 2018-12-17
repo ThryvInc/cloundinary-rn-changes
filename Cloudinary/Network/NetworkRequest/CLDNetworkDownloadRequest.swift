@@ -52,7 +52,7 @@ internal class CLDNetworkDownloadRequest: CLDNetworkDataRequestImpl<DataRequest>
     
     // MARK: - Private
     
-    @discardableResult
+    @objc @discardableResult
     internal func responseData(_ completionHandler: ((_ responseData: Data?, _ error: NSError?) -> ())?) -> CLDFetchImageRequest {
         request.responseData { response in
             if let imageData = response.result.value {

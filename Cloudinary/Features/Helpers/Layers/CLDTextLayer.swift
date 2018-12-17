@@ -26,16 +26,16 @@ import Foundation
 
 @objc open class CLDTextLayer: CLDLayer {
     
-    internal var text: String?
-    internal var fontFamily: String?
-    internal var fontSize: String?
-    internal var fontStyle: String?
-    internal var fontWeight: String?
-    internal var textDecoration: String?
-    internal var textAlign: String?
-    internal var stroke: String?
-    internal var letterSpacing: String?
-    internal var lineSpacing: String?
+    @objc internal var text: String?
+    @objc internal var fontFamily: String?
+    @objc internal var fontSize: String?
+    @objc internal var fontStyle: String?
+    @objc internal var fontWeight: String?
+    @objc internal var textDecoration: String?
+    @objc internal var textAlign: String?
+    @objc internal var stroke: String?
+    @objc internal var letterSpacing: String?
+    @objc internal var lineSpacing: String?
     
     // MARK: - Init
     
@@ -59,7 +59,7 @@ import Foundation
      
      - returns:                 The same instance of CLDTextLayer.
      */
-    open func setText(text: String) -> CLDTextLayer {
+    @objc open func setText(text: String) -> CLDTextLayer {
         self.text = text
         return self
     }
@@ -71,7 +71,7 @@ import Foundation
      
      - returns:                 The same instance of CLDTextLayer.
      */
-    open func setFontFamily(fontFamily: String) -> CLDTextLayer {
+    @objc open func setFontFamily(fontFamily: String) -> CLDTextLayer {
         self.fontFamily = fontFamily
         return self
     }

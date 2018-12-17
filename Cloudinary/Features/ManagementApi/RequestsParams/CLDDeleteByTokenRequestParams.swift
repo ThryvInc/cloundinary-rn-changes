@@ -43,7 +43,7 @@ open class CLDDeleteByTokenRequestParams: CLDRequestParams {
     
     - returns:              A new instance of CLDDeleteByTokenRequestParams.
     */
-    internal init(token: String) {
+    @objc internal init(token: String) {
         super.init()
         setParam(DeleteByTokenParams.Token.rawValue, value: token)
     }
@@ -55,7 +55,7 @@ open class CLDDeleteByTokenRequestParams: CLDRequestParams {
      
      - returns:             A new instance of CLDDeleteByTokenRequestParams.
      */
-    public init(params: [String : Any]) {
+    @objc public init(params: [String : Any]) {
         super.init()
         self.params = params
     }

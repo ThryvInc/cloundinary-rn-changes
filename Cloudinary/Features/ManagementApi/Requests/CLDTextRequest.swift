@@ -38,7 +38,7 @@ import Foundation
      
      - returns:                          The same instance of CLDTextRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func response(_ completionHandler: ((_ result: CLDTextResult?, _ error: NSError?) -> ())?) -> CLDTextRequest {
         responseRaw { (response, error) in
             if let res = response as? [String : AnyObject] {

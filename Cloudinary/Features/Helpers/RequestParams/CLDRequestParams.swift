@@ -33,17 +33,17 @@ import Foundation
     /**
      A dictionary of the params to be sent as part of the request.
     */
-    internal var params: [String : Any] = [:]
+    @objc internal var params: [String : Any] = [:]
     
     /**
      The request's resource type, if set it will be part of the request URL. On most cases defaults to "image".
      */
-    internal var resourceType: String?
+    @objc internal var resourceType: String?
     
     /**
      The request signature for signing a request using an externally generated signature. if no signature is assigned, the SDK will sign the request using the configured API secret.
      */
-    internal var signature: CLDSignature?
+    @objc internal var signature: CLDSignature?
     
     internal override init() {
         super.init()
@@ -60,7 +60,7 @@ import Foundation
     - returns:                     The same instance of CLDUploadRequestParams.
     
     */
-    @discardableResult
+    @objc @discardableResult
     open func setParam(_ key: String, value: Any?) -> CLDRequestParams {
         params[key] = value
         return self
@@ -96,7 +96,7 @@ import Foundation
      - returns:                     The same instance of CLDUploadRequestParams.
      
      */
-    open func getParam(_ key: String) -> Any? {
+    @objc open func getParam(_ key: String) -> Any? {
         return params[key]
     }
 }

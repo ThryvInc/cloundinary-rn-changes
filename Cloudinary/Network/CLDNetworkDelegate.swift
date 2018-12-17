@@ -28,7 +28,7 @@ import Alamofire
 
 internal class CLDNetworkDelegate: NSObject, CLDNetworkAdapter {
 
-    init(configuration: URLSessionConfiguration? = nil) {
+    @objc init(configuration: URLSessionConfiguration? = nil) {
         if let configuration = configuration {
             manager = SessionManager(configuration: configuration)
         } else {
@@ -50,7 +50,7 @@ internal class CLDNetworkDelegate: NSObject, CLDNetworkAdapter {
 
     fileprivate let downloadQueue: OperationQueue = OperationQueue()
 
-    internal static let sharedNetworkDelegate = CLDNetworkDelegate()
+    @objc internal static let sharedNetworkDelegate = CLDNetworkDelegate()
 
     // MARK: Features
 

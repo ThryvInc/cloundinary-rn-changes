@@ -31,7 +31,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
     /**
      Holds the configuration parameters to be used by the `CLDCloudinary` instance.
      */
-    open fileprivate(set) var config: CLDConfiguration
+    @objc open fileprivate(set) var config: CLDConfiguration
     
     /**
      The network coordinator coordinates between the SDK's API level classes to its network adapter layer.
@@ -46,7 +46,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
     /**
      Sets Cloudinary SDK's log level, default level is set to **None**.
      */
-    open static var logLevel: CLDLogLevel {
+    @objc open static var logLevel: CLDLogLevel {
         get {
             return CLDLogManager.minimumLogLevel
         }
@@ -61,7 +61,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
      Sets Cloudinary SDK's caching policy for images that are downloaded via the SDK's CLDDownloader.
      The options are: **None**, **Memory** and **Disk**. default is Disk
      */
-    open var cachePolicy: CLDImageCachePolicy {
+    @objc open var cachePolicy: CLDImageCachePolicy {
         get {
             return CLDImageCache.defaultImageCache.cachePolicy
         }
@@ -74,7 +74,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
      Sets Cloudinary SDK's image cache maximum disk capacity.
      default is 150 MB.     
      */
-    open var cacheMaxDiskCapacity: UInt64 {
+    @objc open var cacheMaxDiskCapacity: UInt64 {
         get {
             return CLDImageCache.defaultImageCache.maxDiskCapacity
         }
@@ -93,7 +93,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
     
      - returns: The new `CLDCloudinary` instance.
      */
-    public init(configuration: CLDConfiguration, networkAdapter: CLDNetworkAdapter? = nil, sessionConfiguration: URLSessionConfiguration? = nil) {
+    @objc public init(configuration: CLDConfiguration, networkAdapter: CLDNetworkAdapter? = nil, sessionConfiguration: URLSessionConfiguration? = nil) {
         config = configuration
         if let customNetworkAdapter = networkAdapter {
             networkCoordinator = CLDNetworkCoordinator(configuration: config, networkAdapter: customNetworkAdapter)
@@ -115,7 +115,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
     
     - returns: A new `CLDUrl` instance.
     */
-    open func createUrl() -> CLDUrl {
+    @objc open func createUrl() -> CLDUrl {
         return CLDUrl(configuration: config)
     }
     
@@ -124,7 +124,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
      
      - returns: A new `CLDUploader` instance.
      */
-    open func createUploader() -> CLDUploader {
+    @objc open func createUploader() -> CLDUploader {
         return CLDUploader(networkCoordinator: networkCoordinator)
     }
     
@@ -133,7 +133,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
      
      - returns: A new `CLDDownloader` instance.
      */
-    open func createDownloader() -> CLDDownloader {
+    @objc open func createDownloader() -> CLDDownloader {
         return CLDDownloader(networkCoordinator: networkCoordinator)
     }
     
@@ -142,7 +142,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
      
      - returns: A new `CLDAdminApi` instance.
      */
-    open func createManagementApi() -> CLDManagementApi {
+    @objc open func createManagementApi() -> CLDManagementApi {
         return CLDManagementApi(networkCoordinator: networkCoordinator)
     }
 
@@ -155,7 +155,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
     
     - parameter maxConcurrentDownloads:     The maximum concurrent downloads to allow.
     */
-    @available(iOS 8.0, *)
+    @objc @available(iOS 8.0, *)
     open func setMaxConcurrentDownloads(_ maxConcurrentDownloads: Int) {
         networkCoordinator.setMaxConcurrentDownloads(maxConcurrentDownloads)
     }
@@ -168,7 +168,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
     
         default is `nil`.
     */
-    @available(iOS 8.0, *)
+    @objc @available(iOS 8.0, *)
     open func setBackgroundCompletionHandler(_ newValue: (() -> ())?) {
         networkCoordinator.setBackgroundCompletionHandler(newValue)
     }
@@ -178,7 +178,7 @@ public typealias CLDCompletionHandler = (_ responseImage: UIImage?, _ error: NSE
     Sets the "USER-AGENT" HTTP header on all network requests to be **"PlatformName/ver CloudinaryiOS/ver"**
     By default the header is set to **"CloudinaryiOS/ver"**
     */
-    open func setUserPlatform(_ platformName: String, version: String) {
+    @objc open func setUserPlatform(_ platformName: String, version: String) {
         config.setUserPlatform(platformName, version: version)
     }
     

@@ -38,7 +38,7 @@ import Foundation
      
      - returns:                          The same instance of CLDTagRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func response(_ completionHandler: ((_ result: CLDTagResult?, _ error: NSError?) -> ())?) -> CLDTagRequest {
         responseRaw { (response, error) in
             if let res = response as? [String : AnyObject] {

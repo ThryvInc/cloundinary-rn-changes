@@ -28,7 +28,7 @@ import Foundation
        
     // MARK: - Getters
     
-    open var result: String? {
+    @objc open var result: String? {
         return getParam(.result) as? String
     }
     

@@ -25,7 +25,7 @@
 import Foundation
 
 internal extension UIView {    
-    internal func fetchImageForUIElement(_ url: String, placeholder: UIImage?, cloudinary: CLDCloudinary, fetchedImageHandler: @escaping ((_ fetchedImage: UIImage) -> ())) {
+    @objc internal func fetchImageForUIElement(_ url: String, placeholder: UIImage?, cloudinary: CLDCloudinary, fetchedImageHandler: @escaping ((_ fetchedImage: UIImage) -> ())) {
         
         if let placeholder = placeholder {
             fetchedImageHandler(placeholder)

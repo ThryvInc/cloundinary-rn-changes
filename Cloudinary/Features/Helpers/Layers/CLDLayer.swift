@@ -29,10 +29,10 @@ import Foundation
 */
 @objc open class CLDLayer: NSObject {
     
-    internal var publicId: String?
-    internal var format: String?
-    internal var resourceType: String?
-    internal var type: String?    
+    @objc internal var publicId: String?
+    @objc internal var format: String?
+    @objc internal var resourceType: String?
+    @objc internal var type: String?    
     
     // MARK: - Init
     
@@ -54,7 +54,7 @@ import Foundation
     
     - returns:                 The same instance of CLDLayer.
     */
-    open func setPublicId(publicId: String) -> CLDLayer {
+    @objc open func setPublicId(publicId: String) -> CLDLayer {
         self.publicId = publicId
         return self
     }
@@ -66,7 +66,7 @@ import Foundation
      
      - returns:                 The same instance of CLDLayer.
      */
-    open func setFormat(format: String) -> CLDLayer {
+    @objc open func setFormat(format: String) -> CLDLayer {
         self.format = format
         return self
     }
@@ -130,7 +130,7 @@ import Foundation
         return resourceType == String(describing: LayerResourceType.text) || resourceType == String(describing: LayerResourceType.subtitles)
     }
     
-    internal func getFinalPublicId() -> String? {
+    @objc internal func getFinalPublicId() -> String? {
         var finalPublicId: String?
         if let pubId = publicId , !pubId.isEmpty, let format = format , !format.isEmpty {
             finalPublicId = "\(pubId).\(format)"
@@ -138,7 +138,7 @@ import Foundation
         return finalPublicId ?? publicId
     }
     
-    internal func getStringComponents() -> [String]? {
+    @objc internal func getStringComponents() -> [String]? {
         var components: [String] = []
         
         if publicId == nil, let resourceType = resourceType , resourceType != String(describing: LayerResourceType.text) {
@@ -164,7 +164,7 @@ import Foundation
     
     // MARK: - Actions
     
-    internal func asString() -> String? {
+    @objc internal func asString() -> String? {
         guard let components = self.getStringComponents() else {
             return nil
         }

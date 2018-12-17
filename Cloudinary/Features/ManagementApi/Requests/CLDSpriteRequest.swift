@@ -38,7 +38,7 @@ import Foundation
      
      - returns:                          The same instance of CLDSpriteRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func response(_ completionHandler: ((_ result: CLDSpriteResult?, _ error: NSError?) -> ())?) -> CLDSpriteRequest {
         responseRaw { (response, error) in
             if let res = response as? [String : AnyObject] {

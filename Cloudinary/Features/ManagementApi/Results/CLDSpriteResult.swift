@@ -28,34 +28,34 @@ import Foundation
     
     // MARK: - Getters
     
-    open var cssUrl: String? {
+    @objc open var cssUrl: String? {
         return getParam(.cssUrl) as? String
     }
     
-    open var secureCssUrl: String? {
+    @objc open var secureCssUrl: String? {
         return getParam(.secureCssUrl) as? String
     }
     
-    open var imageUrl: String? {
+    @objc open var imageUrl: String? {
         return getParam(.imageUrl) as? String
     }
     
-    open var jsonUrl: String? {
+    @objc open var jsonUrl: String? {
         return getParam(.jsonUrl) as? String
     }
     
-    open var publicId: String? {
+    @objc open var publicId: String? {
         return getParam(.publicId) as? String
     }
     
-    open var version: String? {
+    @objc open var version: String? {
         guard let version = getParam(.version) else {
             return nil
         }
         return String(describing: version)
     }
     
-    open var imageInfos: [String : CLDImageInfo]? {
+    @objc open var imageInfos: [String : CLDImageInfo]? {
         guard let imageInfosDic = getParam(.imageInfos) as? [String : AnyObject] else {
             return nil
         }

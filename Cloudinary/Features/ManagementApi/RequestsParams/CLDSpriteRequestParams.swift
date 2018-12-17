@@ -43,7 +43,7 @@ import Foundation
     
     - returns:              A new instance of CLDSpriteRequestParams.
     */
-    internal init(tag: String) {
+    @objc internal init(tag: String) {
         super.init()
         setParam(SpriteParams.Tag.rawValue, value: tag)
     }
@@ -55,7 +55,7 @@ import Foundation
      
      - returns:             A new instance of CLDSpriteRequestParams.
      */
-    public init(params: [String : AnyObject]) {
+    @objc public init(params: [String : AnyObject]) {
         super.init()
         self.params = params
     }
@@ -69,7 +69,7 @@ import Foundation
     
     - returns:                      A new instance of CLDSpriteRequestParams.
     */
-    @discardableResult
+    @objc @discardableResult
     open func setTransformation(_ transformation: CLDTransformation) -> Self {
         if let stringRep = transformation.asString() {
             setParam(SpriteParams.Transformation.rawValue, value: stringRep)
@@ -84,7 +84,7 @@ import Foundation
      
      - returns:                      A new instance of CLDSpriteRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setFormat(_ format: String) -> Self {
         super.setParam(SpriteParams.Format.rawValue, value: format)
         return self
@@ -97,7 +97,7 @@ import Foundation
      
      - returns:                      A new instance of CLDSpriteRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setAsync(_ async: Bool) -> Self {
         super.setParam(SpriteParams.Async.rawValue, value: async)
         return self
@@ -110,7 +110,7 @@ import Foundation
      
      - returns:                      A new instance of CLDSpriteRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setNotificationUrl(_ notificationUrl: String) -> Self {
         super.setParam(SpriteParams.NotificationUrl.rawValue, value: notificationUrl)
         return self

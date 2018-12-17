@@ -29,11 +29,11 @@ import Foundation
     
     // MARK: - Getters    
     
-    open var type: String? {
+    @objc open var type: String? {
         return getParam(.urlType) as? String
     }
     
-    open var eager: [CLDEagerResult]? {
+    @objc open var eager: [CLDEagerResult]? {
         guard let eagerArr = getParam(.eager) as? [[String : AnyObject]] else {
             return nil
         }
@@ -65,11 +65,11 @@ import Foundation
     
     // MARK: - Getters
     
-    open var url: String? {
+    @objc open var url: String? {
         return getParam(.url) as? String
     }
     
-    open var secureUrl: String? {
+    @objc open var secureUrl: String? {
         return getParam(.secureUrl) as? String
     }        
 }

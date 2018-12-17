@@ -26,12 +26,12 @@ import Foundation
 
 @objc open class CLDBaseResult: NSObject {
     
-    open fileprivate(set) var resultJson: [String : AnyObject]
+    @objc open fileprivate(set) var resultJson: [String : AnyObject]
     
     
     // MARK: - Init
     
-    internal init(json: [String : AnyObject]) {
+    @objc internal init(json: [String : AnyObject]) {
         resultJson = json
     }    
     

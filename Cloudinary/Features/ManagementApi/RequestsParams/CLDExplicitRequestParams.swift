@@ -44,7 +44,7 @@ import Foundation
     
     - returns:                       A new instance of CLDExplicitRequestParams.
     */
-    internal convenience init(publicId: String, type: CLDType) {
+    @objc internal convenience init(publicId: String, type: CLDType) {
         self.init(publicId: publicId, type: String(describing: type))
     }
     

@@ -38,7 +38,7 @@ import Foundation
      
      - returns:                          The same instance of CLDExplodeRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func response(_ completionHandler: ((_ result: CLDExplodeResult?, _ error: NSError?) -> ())?) -> CLDExplodeRequest {
         responseRaw { (response, error) in
             if let res = response as? [String : AnyObject] {

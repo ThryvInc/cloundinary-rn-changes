@@ -42,7 +42,7 @@ open class CLDTextRequestParams: CLDRequestParams {
     
     - returns:              A new instance of CLDTextRequestParams.
     */
-    internal init(text: String) {
+    @objc internal init(text: String) {
         super.init()
         setParam(TextParams.Text.rawValue, value: text)
     }
@@ -54,7 +54,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:             A new instance of CLDTextRequestParams.
      */
-    public init(params: [String : AnyObject]) {
+    @objc public init(params: [String : AnyObject]) {
         super.init()
         self.params = params
     }
@@ -69,7 +69,7 @@ open class CLDTextRequestParams: CLDRequestParams {
     
     - returns:              A new instance of CLDTextRequestParams.
     */
-    @discardableResult
+    @objc @discardableResult
     open func setPublicId(_ publicId: String) -> CLDTextRequestParams {
         setParam(TextParams.PublicId.rawValue, value: publicId)
         return self
@@ -82,7 +82,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:                     A new instance of CLDTextRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setFontFamily(_ fontFamily: String) -> CLDTextRequestParams {
         setParam(TextParams.FontFamily.rawValue, value: fontFamily)
         return self
@@ -95,7 +95,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:                     A new instance of CLDTextRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setFontSizeFromInt(_ fontSize: Int) -> CLDTextRequestParams {
         return setFontSize(String(fontSize))
     }
@@ -107,7 +107,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:                     A new instance of CLDTextRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setFontSize(_ fontSize: String) -> CLDTextRequestParams {
         setParam(TextParams.FontSize.rawValue, value: fontSize)
         return self
@@ -120,7 +120,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:                     A new instance of CLDTextRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setFontColor(_ fontColor: String) -> CLDTextRequestParams {
         setParam(TextParams.FontColor.rawValue, value: fontColor)
         return self
@@ -146,7 +146,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:                     A new instance of CLDTextRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setFontWeight(_ fontWeight: String) -> CLDTextRequestParams {
         setParam(TextParams.FontWeight.rawValue, value: fontWeight)
         return self
@@ -172,7 +172,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:                     A new instance of CLDTextRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setFontStyle(_ fontStyle: String) -> CLDTextRequestParams {
         setParam(TextParams.FontStyle.rawValue, value: fontStyle)
         return self
@@ -185,7 +185,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:                     A new instance of CLDTextRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setBackground(_ background: String) -> CLDTextRequestParams {
         setParam(TextParams.Background.rawValue, value: background)
         return self
@@ -198,7 +198,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:                     A new instance of CLDTextRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setOpacity(_ opacity: Int) -> CLDTextRequestParams {
         setParam(TextParams.Opacity.rawValue, value: opacity)
         return self
@@ -224,7 +224,7 @@ open class CLDTextRequestParams: CLDRequestParams {
      
      - returns:                     A new instance of CLDTextRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setTextDecoration(_ textDecoration: String) -> CLDTextRequestParams {
         setParam(TextParams.TextDecoration.rawValue, value: textDecoration)
         return self

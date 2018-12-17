@@ -31,10 +31,10 @@ The CLDSignature class represents a signature used to sign a URL request.
 */
 @objc open class CLDSignature: NSObject {
         
-    open let signature: String
-    open let timestamp: NSNumber
+    @objc open let signature: String
+    @objc open let timestamp: NSNumber
     
-    public init(signature: String, timestamp: NSNumber) {
+    @objc public init(signature: String, timestamp: NSNumber) {
         self.signature = signature
         self.timestamp = timestamp
         super.init()
@@ -64,21 +64,21 @@ The CLDCoordinate class represents a rectangle area on an asset.
 */
 @objc open class CLDCoordinate: NSObject {
     
-    let rect: CGRect
+    @objc let rect: CGRect
     
-    var x: Float {
+    @objc var x: Float {
         return Float(rect.origin.x)
     }
     
-    var y: Float {
+    @objc var y: Float {
         return Float(rect.origin.y)
     }
     
-    var width: Float {
+    @objc var width: Float {
         return Float(rect.width)
     }
     
-    var height: Float {
+    @objc var height: Float {
         return Float(rect.height)
     }
     
@@ -91,7 +91,7 @@ The CLDCoordinate class represents a rectangle area on an asset.
     
     - returns:          A new CLDCoordinate instance.
     */
-    public init(rect: CGRect) {
+    @objc public init(rect: CGRect) {
         self.rect = rect
     }
     
@@ -117,7 +117,7 @@ Responsive breakpoints is used to request Cloudinary to automatically find the b
 */
 @objc open class CLDResponsiveBreakpoints: NSObject {
     
-    internal var params: [String: AnyObject] = [:]
+    @objc internal var params: [String: AnyObject] = [:]
     
     // MARK - Init
     
@@ -129,7 +129,7 @@ Responsive breakpoints is used to request Cloudinary to automatically find the b
     
     - returns:                      A new CLDResponsiveBreakpoints instance.
     */
-    public init(createDerived: Bool) {
+    @objc public init(createDerived: Bool) {
         super.init()
         setParam(ResponsiveBreakpointsParams.CreateDerived.rawValue, value: createDerived as AnyObject?)
     }
@@ -143,7 +143,7 @@ Responsive breakpoints is used to request Cloudinary to automatically find the b
     
     - returns:                      The same CLDResponsiveBreakpoints instance.
     */
-    open func setTransformations(_ transformation: CLDTransformation) -> Self {
+    @objc open func setTransformations(_ transformation: CLDTransformation) -> Self {
         if let trans = transformation.asString() {
             setParam(ResponsiveBreakpointsParams.Transformation.rawValue, value: trans as AnyObject?)
         }
@@ -158,7 +158,7 @@ Responsive breakpoints is used to request Cloudinary to automatically find the b
      
      - returns:                      The same CLDResponsiveBreakpoints instance.
      */
-    open func setMaxWidth(_ maxWidth: Int) -> Self {
+    @objc open func setMaxWidth(_ maxWidth: Int) -> Self {
         return setParam(ResponsiveBreakpointsParams.MaxWidth.rawValue, value: maxWidth as AnyObject?)
     }
     
@@ -169,7 +169,7 @@ Responsive breakpoints is used to request Cloudinary to automatically find the b
      
      - returns:                      The same CLDResponsiveBreakpoints instance.
      */
-    open func setMinWidth(_ minWidth: Int) -> Self {
+    @objc open func setMinWidth(_ minWidth: Int) -> Self {
         return setParam(ResponsiveBreakpointsParams.MinWidth.rawValue, value: minWidth as AnyObject?)
     }
     
@@ -180,7 +180,7 @@ Responsive breakpoints is used to request Cloudinary to automatically find the b
      
      - returns:                      The same CLDResponsiveBreakpoints instance.
      */
-    open func setBytesStep(_ bytesStep: Int) -> Self {
+    @objc open func setBytesStep(_ bytesStep: Int) -> Self {
         return setParam(ResponsiveBreakpointsParams.BytesStep.rawValue, value: bytesStep as AnyObject?)
     }
     
@@ -192,11 +192,11 @@ Responsive breakpoints is used to request Cloudinary to automatically find the b
      
      - returns:                      The same CLDResponsiveBreakpoints instance.
      */
-    open func setMaxImages(_ maxImages: Int) -> Self {
+    @objc open func setMaxImages(_ maxImages: Int) -> Self {
         return setParam(ResponsiveBreakpointsParams.MaxImages.rawValue, value: maxImages as AnyObject?)
     }
     
-    @discardableResult
+    @objc @discardableResult
     open func setParam(_ key: String, value: AnyObject?) -> Self {
         params[key] = value
         return self

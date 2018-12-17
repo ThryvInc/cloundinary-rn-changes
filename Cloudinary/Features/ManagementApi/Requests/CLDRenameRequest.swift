@@ -38,7 +38,7 @@ import Foundation
      
      - returns:                          The same instance of CLDRenameRequest.
      */
-    @discardableResult
+    @objc @discardableResult
     open func response(_ completionHandler: ((_ result: CLDRenameResult?, _ error: NSError?) -> ())?) -> CLDRenameRequest {
         responseRaw { (response, error) in
             if let res = response as? [String : AnyObject] {

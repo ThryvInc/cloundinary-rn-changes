@@ -26,7 +26,7 @@ import Foundation
 
 @objc open class CLDFace: CLDBaseResult {
     
-    open var boundingBox: CLDBoundingBox? {
+    @objc open var boundingBox: CLDBoundingBox? {
         guard let bb = getParam(.boundingBox) as? [String : AnyObject] else {
             return nil
         }
@@ -77,19 +77,19 @@ import Foundation
         return getParam(.gender) as? Double
     }
     
-    open var race: [String : Double]? {
+    @objc open var race: [String : Double]? {
         return getParam(.race) as? [String : Double]
     }
     
-    open var emotion: [String : Double]? {
+    @objc open var emotion: [String : Double]? {
         return getParam(.emotion) as? [String : Double]
     }
     
-    open var quality: [String : Double]? {
+    @objc open var quality: [String : Double]? {
         return getParam(.quality) as? [String : Double]
     }
     
-    open var pose: [String : Double]? {
+    @objc open var pose: [String : Double]? {
         return getParam(.pose) as? [String : Double]
     }
     

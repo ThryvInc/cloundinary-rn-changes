@@ -45,7 +45,7 @@ import Foundation
     
     - returns:                       A new instance of CLDExplodeRequestParams.
     */
-    internal init(publicId: String, transformation: CLDTransformation) {
+    @objc internal init(publicId: String, transformation: CLDTransformation) {
         super.init()
         setParam(ExplodeParams.PublicId.rawValue, value: publicId)
         setParam(ExplodeParams.Transformation.rawValue, value: transformation.asString())
@@ -58,7 +58,7 @@ import Foundation
      
      - returns:             A new instance of CLDExplodeRequestParams.
      */
-    public init(params: [String : AnyObject]) {
+    @objc public init(params: [String : AnyObject]) {
         super.init()
         self.params = params
     }
@@ -85,7 +85,7 @@ import Foundation
      
      - returns:              The same instance of CLDExplodeRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setType(_ type: String) -> Self {
         setParam(ExplodeParams.CloudType.rawValue, value: type)
         return self
@@ -98,7 +98,7 @@ import Foundation
      
      - returns:                 The same instance of CLDExplodeRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setFormat(_ format: String) -> Self {
         setParam(ExplodeParams.Format.rawValue, value: format)
         return self
@@ -111,7 +111,7 @@ import Foundation
      
      - returns:                 The same instance of CLDExplodeRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setAsync(_ async: Bool) -> Self {
         setParam(ExplodeParams.Async.rawValue, value: async)
         return self
@@ -124,7 +124,7 @@ import Foundation
      
      - returns:                         The same instance of CLDExplodeRequestParams.
      */
-    @discardableResult
+    @objc @discardableResult
     open func setNotificationUrl(_ notificationUrl: String) -> Self {
         setParam(ExplodeParams.NotificationUrl.rawValue, value: notificationUrl)
         return self
